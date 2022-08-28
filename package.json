@@ -1,0 +1,29 @@
+{
+  "name": "kingdom-envoy",
+  "version": "1.0.0",
+  "description": "Kingdom Envoy International Church Official Website",
+  "main": "server.mjs",
+  "scripts": {
+    "test": "/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaytru1997/kingdom-envoy-website.git"
+  },
+  "keywords": [
+    "Kingdom",
+    "Envoy"
+  ],
+  "author": "Kingdom Envoy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaytru1997/kingdom-envoy-website/issues"
+  },
+  "homepage": "https://github.com/Jaytru1997/kingdom-envoy-website#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}

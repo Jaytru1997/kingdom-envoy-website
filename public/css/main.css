@@ -1,0 +1,272 @@
+/*
+--------------------------------------------
+--------------RESPONSIVE DESIGN-------------
+--------------------------------------------
+*/
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e7e7e7;
+    color: #121212;
+    font-size: 1.6rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*
+--------------------------------------------
+---------------NAVBAR STYLES----------------
+--------------------------------------------
+*/
+.navpage {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    padding: auto;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+
+.navpage-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.navpage a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.navpage a:hover, .navpage a:focus {
+    color: #f1f1f1;
+}
+
+.navpage .closebtn {
+    position: absolute;
+    top: 50px;
+    right: 45px;
+    font-size: 60px;
+}
+.navpage {
+    overflow-y: auto;
+}
+.navpage a {
+    font-size: 20px
+}
+
+.menu-icon {
+    margin-left: 80%;
+}
+
+/*
+--------------------------------------------
+---------------HEADER STYLES----------------
+--------------------------------------------
+*/
+.header {
+    color: #000000;
+    font-weight: bold;
+    text-align: justify;
+    border-radius: 0.875em;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+
+.welcome {
+    align-self: center;
+}
+
+.welcome-text {
+    display: none;
+}
+
+.welcome-image {
+    width: 25.625em;
+    height: 30.688em;
+    margin-bottom: 0em;
+    align-self: center;
+    justify-content: center;
+}
+
+.auto-type {
+    display: none;
+}
+
+.headers {
+    border-bottom: 2px solid #F2C037;
+}
+
+
+/*
+--------------------------------------------
+----------------SERVICE CARD----------------
+--------------------------------------------
+*/
+
+.my-card {
+    width: 100%;
+}
+
+/*
+--------------------------------------------
+----------------MINISTRY CARD---------------
+--------------------------------------------
+*/
+.ministry-card {
+    background-color: #F2C037;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3.125em;
+    /* margin-left: 2.188em; */
+    margin-bottom: 0.625em;
+    padding-top: 1em;
+    width: 100%;
+    height: 32.438em;
+    align-content: center;
+}
+
+.ministry-card-img {
+    width: 45%;
+    margin-top: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 11.25em;
+}
+
+.ministry-page {
+    float: right;
+    background-color: #0d0250;
+    color: #ffffff;
+    padding: 0.313em 1.25em 0.313em 1.25em;
+}
+
+.ministry-phrase {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 2.313em;
+    text-align: center;
+    margin-bottom: 0.125em;
+}
+
+.ministry-caption {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ministry-card-div {
+    width: 87%;
+    height: 0.063em;
+    background-color: #000000;
+    margin-left: 1.5em;
+    margin-right: 1.25em;
+    margin-bottom: 0.625em;
+}
+
+.ministry-interact {
+    width: 100%;
+    display: table;
+}
+
+.ministry-superior {
+    width: 2.563em;
+    height: 2.563em;
+    margin-left: 1.875em;
+}
+
+.ministry-inquire {
+    width: 2.563em;
+    height: 2.563em;
+    float: right;
+    margin-right: 2.5em;
+}
+
+.mobile-slide .home-carousel {
+    min-height: 700px;
+}
+
+.desktop-slide .home-carousel {
+    min-height: 100vh;
+}
+
+.give {
+    z-index: 100;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+  }
+
+.buy_msg {
+z-index: 100;
+top: 50%;
+width: 48px;
+height: 48px;
+}
+/*
+--------------------------------------------
+------------------VIEWS---------------------
+--------------------------------------------
+*/
+
+/* Smartphones (extremely small devices) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
+}
+
+/* Smartphones (small devices) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+/* Smartphones (popular mobile devices) ----------- */
+@media only screen and (min-device-width : 481px) and (max-device-width : 767px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+    
+@media only screen and (min-device-width : 481px) and (max-device-width : 767px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+/* Smartphones (medium devices) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) and (orientation : landscape) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) and (orientation : portrait) {
+/* Styles */
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1024px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1201px) {
+/* Styles */
+}
