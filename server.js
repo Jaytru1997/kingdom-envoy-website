@@ -1,11 +1,25 @@
 "use strict";
-require('dotenv').config({ path: "./config.env" });
+require("dotenv").config({ path: "./config.env" });
+const connectDB = require("./db/connect");
 
 const app = require("./app.js");
 
-// 1) Server setup
+//Server setup
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(process.env.NODE_ENV, `http://localhost:${port}`);
-});
+//db connect
+const start = async () => {
+  try {
+    await connectDB(process.env.MONGODB_URI);
+    console.log("DB Connected");
+    app.listen(port, () => {
+      console.log(`server is running on port ${port}`);
+      console.log(`http://localhost:${port}`);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+//start server
+start();
