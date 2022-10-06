@@ -30,7 +30,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    padding: 10px 200px;
+    padding: 1rem 20rem;
     z-index: 100;
 }
 
@@ -42,6 +42,22 @@ body {
 .nav-link > a {
     text-decoration: none;
     color: #e7e7e7;
+}
+
+.hamurger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.line {
+    border-top-color: #e7e7e7;
+    border-top-width: 0.1rem;
+    border-top-style: solid;
+    width: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .navpage {
