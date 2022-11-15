@@ -5,6 +5,10 @@
 */
 :root {
     font-size: 62.5%;
+    --black: #000000;
+    --dark: #121212;
+    --white: #ffffff;
+    --light: #e7e7e7;
 }
 
 * {
@@ -14,101 +18,55 @@
 }
 
 body {
-    background-color: #e7e7e7;
-    color: #121212;
+    background-color: var(--light);
+    color: var(--dark);
     font-size: 1.6rem;
     font-family: Helvetica, Arial, sans-serif;
 }
+/* 
+.show {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+} */
 
 /*
 --------------------------------------------
 ---------------NAVBAR STYLES----------------
 --------------------------------------------
 */
-.navbar {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    padding: 1rem 20rem;
-    z-index: 100;
+
+.nav-img {
+    width: 6.4rem;
+    height: 6.4rem;
 }
 
-.nav-link-list {
-    display: flex;
-    flex-direction: row;
+.sidenav-overlay {
+    height: 0px;
+    width: 0px;
 }
 
-.nav-link > a {
-    text-decoration: none;
-    color: #e7e7e7;
+.carousel {
+    height: 80vh;
 }
 
-.hamurger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+.pm {
+    background-image: url(../images/IMG_6279.jpg);
+    background-size: 650px 80vh;
+    background-repeat: no-repeat;
+    background-position: top;
+    filter: brightness(0.5);
 }
 
-.line {
-    border-top-color: #e7e7e7;
-    border-top-width: 0.1rem;
-    border-top-style: solid;
-    width: 2rem;
-    margin-bottom: 0.5rem;
+.pj {
+    background-image: url(../images/IMG_6285.jpg);
+    background-size: 850px 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0.5);
 }
-
-.navpage {
-    display:none;
-    height: 0%;
-    width: 100%;
-    position: fixed;
-    padding: auto;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(255,255,255);
-    background-color: rgba(255,255,255, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;
-  }
-
-/* .navpage-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.navpage a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.navpage a:hover, .navpage a:focus {
-    color: #f1f1f1;
-}
-
-.navpage .closebtn {
-    position: absolute;
-    top: 50px;
-    right: 45px;
-    font-size: 60px;
-}
-.navpage {
-    overflow-y: auto;
-}
-.navpage a {
-    font-size: 20px
-} */
-
 
 /*
 --------------------------------------------
@@ -139,30 +97,138 @@ body {
 
 /* Smartphones (extremely small devices) ----------- */
 @media only screen and (max-width : 320px) {
-
+    .carousel {
+        height: 100vh;
+    }
+    
+    .pm {
+        background-image: url(../images/IMG_6279.jpg);
+        background-size: 500px 700px;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
+    
+    .pj {
+        background-image: url(../images/IMG_6285.jpg);
+        background-size: 500px 700px;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
 }
 
 /* Smartphones (popular mobile devices) ----------- */
-@media (min-width: 576px) {
+@media (min-width: 576px) {    
+    .carousel {
+        height: 100vh;
+    }
     
+    .pm {
+        background-image: url(../images/IMG_6279.jpg);
+        background-size: 500px 700px;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: brightness(0.5);
+    }
+    
+    .pj {
+        background-image: url(../images/IMG_6285.jpg);
+        background-size: 500px 700px;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: brightness(0.5);
+    }
 }
 
 /* Smartphones (medium devices) ----------- */
-@media (min-width: 768px) {
-   
+@media (min-width: 768px) {    
+    .carousel {
+        height: 100vh;
+    }
+    
+    .pm {
+        background-image: url(../images/IMG_6279.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
+    
+    .pj {
+        background-image: url(../images/IMG_6285.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
 }
 
 /* Large devices (Tablets, 992px and up) */
-@media (min-width: 992px) {
-   
+@media (min-width: 992px) {    
+    .carousel {
+        height: 95vh;
+    }
+    
+    .pm {
+        background-image: url(../images/IMG_6279.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
+    
+    .pj {
+        background-image: url(../images/IMG_6285.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
 }
 
 /* Desktops and laptops ----------- */
-@media (min-width: 1200px) {
- 
+@media (min-width: 1200px) {    
+    .carousel {
+        height: 95vh;
+    }
+    
+    .pm {
+        background-image: url(../images/IMG_6279.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
+    
+    .pj {
+        background-image: url(../images/IMG_6285.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
 }
 
 /* Extra large device ----------- */
 @media (min-width: 1400px) {
-   
+    .carousel {
+        height: 95vh;
+    }
+    
+    .pm {
+        background-image: url(../images/IMG_6279.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
+    
+    .pj {
+        background-image: url(../images/IMG_6285.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        filter: brightness(0.5);
+    }
 }
