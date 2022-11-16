@@ -155,7 +155,7 @@ exports.template = (options) => {
                                                 bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
                         color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;"
                                                     href="${options.cta.link}">
-                                                    ${options.cta}
+                                                    ${options.cta.text}
                                                 </a>
                                             </td>
                                         </tr>

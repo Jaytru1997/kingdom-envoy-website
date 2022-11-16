@@ -1,5 +1,5 @@
 const cron = require("node-cron");
-const asyncWrapper = require('../utilities/async');
+const {asyncWrapper} = require('../utilities/async');
 
 exports.scheduler = asyncWrapper((schedule, job) => {
   if (cron.validate(schedule)) {

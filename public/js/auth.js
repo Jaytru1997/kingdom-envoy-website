@@ -32,3 +32,9 @@ logintoggler.addEventListener("click", (e) => {
       password.type = "text";
     }
   });
+
+const register = function(params) {
+  fetch('/register', {
+    method: "POST"
+  })
+}

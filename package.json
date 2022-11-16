@@ -24,7 +24,7 @@
   "homepage": "https://github.com/Jaytru1997/kingdom-envoy-website#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cookie": "^0.5.0",
     "cookie-parser": "^1.4.6",

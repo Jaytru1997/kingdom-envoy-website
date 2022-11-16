@@ -5,10 +5,9 @@ require("dotenv").config();
 
 const User = require("../models/userModel");
 const sendEmail = require("../services/email");
-// const KYC = require("../models/admin/kycModel");
+const {asyncWrapper} = require("../utilities/async");
+const {AppError} = require("../utilities/appError");
 // const Settings = require("../models/admin/settingsModel");
-// const asyncWrapper = require("../middleware/async");
-// const AppError = require("../middleware/appError");
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -38,16 +37,25 @@ const createSendToken = (user, statusCode, res) => {
   });
 };
 
-exports.createUser = asyncWrapper(async (req, res, next) => {
+exports.register = asyncWrapper(async (req, res, next) => {
   // console.log(req.body);
+  const message = "";
 
-  const message = ``;
+  const options = {
+    email: req.body.email,
+    subject: "New User SignUp",
+    message,
+    cta: {
+        text: "Log In",
+        link: "https://keynigeria.org/login"
+    }
+  };
 
   try {
     const user = await User.create({
       email: req.body.email,
       password: req.body.password,
-      passwordConfirm: req.body.passwordConfirm,
+      conpassword: req.body.conpassword,
     });
     await sendEmail({
       email: req.body.email,
@@ -195,7 +203,7 @@ exports.forgotPassword = asyncWrapper(async (req, res, next) => {
   //                                                                        We're happy you are signed up to coinma, the best exchange platform in the world. Log in to our platform to explore all of our offers.
   //                                                                    </p>
   //                                                                    <p style="color:#455056; font-size:15px;line-height:24px; margin-top: 35px; font-weight: bold; text-align: left;">
-  //                                                                        Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: \n\n ${resetURL}.
+  //                                                                        Forgot your password? Submit a PATCH request with your new password and conpassword to: \n\n ${resetURL}.
   //                                                                    </p>
   //                                                                    <p style="font-weight: bold; text-align: left; color:#455056; font-size:15px;line-height:24px; margin:40px 0 0 0;">Welcome to coinma!</p>
   //                                                                    <p style="font-weight: bold; text-align: left; color:#455056; font-size:15px;line-height:24px; margin:0 0 25px 0;">The coinma Team</p>
@@ -267,7 +275,7 @@ exports.resetPassword = asyncWrapper(async (req, res, next) => {
 
   //update changedPasswordAt property for the user
   user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
+  user.conpassword = req.body.conpassword;
   user.passwordResetToken = undefined;
   user.passwordResetExpires = undefined;
   await user.save();
@@ -288,7 +296,7 @@ exports.updatePassword = asyncWrapper(async (req, res, next) => {
 
   //update password
   user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
+  user.conpassword = req.body.conpassword;
   await user.save();
 
   //Log user in, send JWT
