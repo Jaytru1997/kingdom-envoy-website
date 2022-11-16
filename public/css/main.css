@@ -68,6 +68,25 @@ body {
     filter: brightness(0.5);
 }
 
+.service-heading {
+    text-transform: uppercase;
+    margin: 40px 0px 20px 0px;
+    font-weight: 700;
+}
+
+.star {
+    margin: 10px 0px 20px 0px;
+    filter: invert(76%) sepia(19%) saturate(3352%) hue-rotate(353deg) brightness(107%) contrast(104%);
+}
+
+.service-time {
+    color: #f44336;
+    font-weight: 700;
+}
+
+.service-icon {
+    width: 48px;
+}
 
 /*
 --------------------------------------------
