@@ -4,9 +4,9 @@ const crypto = require("crypto");
 require("dotenv").config();
 
 const User = require("../models/userModel");
-const sendEmail = require("../services/email");
+const {sendEmail} = require("../services/email");
 const {asyncWrapper} = require("../utilities/async");
-const {AppError} = require("../utilities/appError");
+const AppError = require("../utilities/appError");
 // const Settings = require("../models/admin/settingsModel");
 
 const signToken = (id) => {
@@ -30,25 +30,20 @@ const createSendToken = (user, statusCode, res) => {
 
   user.password = undefined;
 
-  res.status(statusCode).json({
-    status: "success",
-    token,
-    data: user,
-  });
+  res.status(statusCode);
 };
 
 exports.register = asyncWrapper(async (req, res, next) => {
   // console.log(req.body);
-  const message = "";
+  const message = "Your account has been successfully registered. You can login to the user dashboard by clicking the button below";
 
   const options = {
+    title: "User Registration",
     email: req.body.email,
     subject: "New User SignUp",
     message,
-    cta: {
-        text: "Log In",
-        link: "https://keynigeria.org/login"
-    }
+    cta: "Log In",
+    ctaLink: "https://keynigeria.org/login"
   };
 
   try {
@@ -57,13 +52,11 @@ exports.register = asyncWrapper(async (req, res, next) => {
       password: req.body.password,
       conpassword: req.body.conpassword,
     });
-    await sendEmail({
-      email: req.body.email,
-      subject: "New Account SignUp",
-      message,
-    });
+    await sendEmail(options);
 
     createSendToken(user, 201, res);
+    res.render("components/success", {success:{...options}});
+    // return next(options);
   } catch (err) {
     console.log(err);
     return next(

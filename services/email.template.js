@@ -154,8 +154,8 @@ exports.template = (options) => {
                                                 style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                                                 bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
                         color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;"
-                                                    href="${options.cta.link}">
-                                                    ${options.cta.text}
+                                                    href="${options.ctaLink}">
+                                                    ${options.cta}
                                                 </a>
                                             </td>
                                         </tr>

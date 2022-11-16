@@ -3,15 +3,18 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
-// const Wallets = require("./admin/walletModel");
-// const { coinConversion } = require("../middleware/rates");
-
 const userSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
     enum: ["user", "admin"],
     default: "user",
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: ["approved", "suspended", "pending"],
+    default: "pending",
   },
   email: {
     type: String,

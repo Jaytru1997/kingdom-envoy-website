@@ -1,25 +1,29 @@
 class Templates {
+  // async error(req, res){
+  //   res.render("components/error", {})
+  // }
+
   async home(req, res) {
     try {
       res.render("index", {});
-    } catch (err) {
-      res.render("error", {});
+    } catch (error) {
+      res.render("components/error", {error});
     }
   }
 
   async about(req, res) {
     try {
       res.render("about", {});
-    } catch (err) {
-      res.render("error", {});
+    } catch (error) {
+      res.render("components/error", {error});
     }
   }
 
   async contact(req, res) {
     try {
       res.render("contact", {});
-    } catch (err) {
-      res.render("error", {});
+    } catch (error) {
+      res.render("components/error", {error});
     }
   }
 
@@ -27,8 +31,8 @@ class Templates {
     if (req.method == "GET") {
       try {
         res.render("login", {});
-      } catch (err) {
-        res.render("error", {});
+      } catch (error) {
+        res.render("components/error", {error});
       }
     }
   }
@@ -37,8 +41,8 @@ class Templates {
     if (req.method == "GET") {
       try {
         res.render("register", {});
-      } catch (err) {
-        res.render("error", {});
+      } catch (error) {
+        res.render("components/error", {error});
       }
     }
   }
