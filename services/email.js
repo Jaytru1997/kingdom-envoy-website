@@ -1,8 +1,10 @@
 const nodemailer = require("nodemailer");
+const template = require("./email.template");
 require("dotenv").config();
 
 exports.sendEmail = async (options) => {
   let transporter;
+  let _template = template(options);
   if (process.env.ENVIRONMENT === "local") {
     transporter = nodemailer.createTransport({
       host: process.env.MAILTRAP_HOST,
@@ -32,7 +34,7 @@ exports.sendEmail = async (options) => {
     to: options.email,
     subject: options.subject,
     // text: options.message,
-    html: options.message,
+    html: _template,
   };
 
   //send the email with nodemailer
