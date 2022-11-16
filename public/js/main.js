@@ -1,5 +1,8 @@
 "use strict";
 
+const currentYear = new Date().getFullYear();
+document.querySelector(".current-year").textContent = currentYear;
+
 const initSideBar = () => {
   var elems = document.querySelector(".sidenav");
   var options = {

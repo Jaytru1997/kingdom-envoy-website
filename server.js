@@ -1,5 +1,5 @@
 "use strict";
-require("dotenv").config({ path: "./config.env" });
+require("dotenv").config();
 const connectDB = require("./db/connect");
 
 const app = require("./app.js");
