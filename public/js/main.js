@@ -17,8 +17,27 @@ const initCarousel = () => {
   var instances = M.Carousel.init(elems, options);
 }
 
-document.addEventListener("DOMContentLoaded", initSideBar);
-document.addEventListener('DOMContentLoaded', initCarousel);
+const initFab = () => {
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var options = {
+    directon: 'top',
+    hoverEnabled: true,
+  };
+  var instances = M.FloatingActionButton.init(elems, options);
+};
+
+const cycleFns = (fns) => {
+  fns.forEach(fn => {
+    document.addEventListener("DOMContentLoaded", fn);
+  });
+}
+
+const fns = [initSideBar, initCarousel, initFab];
+
+cycleFns(fns);
+
+// document.addEventListener('DOMContentLoaded', initCarousel);
+// document.addEventListener('DOMContentLoaded', initFab);
 
 const sidenav = document.querySelector(".sidenav");
 
