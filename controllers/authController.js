@@ -4,11 +4,11 @@ const crypto = require("crypto");
 require("dotenv").config();
 
 const User = require("../models/userModel");
+const sendEmail = require("../services/email");
 // const KYC = require("../models/admin/kycModel");
 // const Settings = require("../models/admin/settingsModel");
 // const asyncWrapper = require("../middleware/async");
 // const AppError = require("../middleware/appError");
-// const sendEmail = require("../middleware/email");
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
