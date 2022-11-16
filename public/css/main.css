@@ -48,6 +48,12 @@ body {
     width: 0px;
 }
 
+
+/*
+--------------------------------------------
+---------------HEADER STYLES----------------
+--------------------------------------------
+*/
 .carousel {
     height: 95vh;
 }
@@ -67,6 +73,12 @@ body {
     background-position: center;
     filter: brightness(0.5);
 }
+
+/*
+--------------------------------------------
+----------------SERVICE CARD----------------
+--------------------------------------------
+*/
 
 .service-heading {
     text-transform: uppercase;
@@ -88,26 +100,56 @@ body {
     width: 48px;
 }
 
-/*
---------------------------------------------
----------------HEADER STYLES----------------
---------------------------------------------
-*/
-
-
-/*
---------------------------------------------
-----------------SERVICE CARD----------------
---------------------------------------------
-*/
-
 
 /*
 --------------------------------------------
 ----------------MINISTRY CARD---------------
 --------------------------------------------
 */
+.ministry-card{
+    border-radius: 20px;
+    padding: 20px;
+    height: 620px;
+}
 
+.ministry-heading {
+    text-transform: uppercase;
+    margin: 40px 0px 20px 0px;
+    font-weight: 700;
+}
+
+.ministry-logo {
+    padding: 20px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+
+}
+
+.ministry-name {
+    text-transform: uppercase;
+    height: 40px;
+}
+
+.ministry-divider {
+    margin: 30px 0px -15px 0px;
+}
+
+.ministry-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 25px 0px 10px;
+}
+
+.ministry-icon {
+    width: 64px;
+}
+
+.ministry-action > a {
+    text-decoration: none;
+    color: var(--black);
+}
 
 /*
 --------------------------------------------
