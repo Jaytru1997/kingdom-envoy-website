@@ -81,11 +81,7 @@ exports.login = asyncWrapper(async (req, res, next) => {
 
   const token = signToken(user._id);
 
-  res.status(200).json({
-    status: "success",
-    token,
-    data: user,
-  });
+  res.status(200).redirect('/auth/dashboard');
 });
 
 exports.protect = asyncWrapper(async (req, res, next) => {

@@ -30,15 +30,15 @@ router.route("/login").get(templates.login).post(login);
 router.route("/register").get(templates.register).post(register);
 
 
-//USER ROUTES
+//AUTH ROUTES
 
-// router
-//   .route("/user/index")
-//   .get(protect, restrictTo("admin", "user"), (req, res) => {
-//     res.render("user/index", {
-//       user: req.user,
-//     });
-//   });
+router
+  .route("/auth/dashboard")
+  .get(protect, restrictTo("admin", "user"), (req, res) => {
+    res.render("auth/index", {
+      user: req.user,
+    });
+  });
 
 
 //ADMIN ROUTES
