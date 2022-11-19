@@ -4,7 +4,7 @@ const serviceSchema = new mongoose.Schema({
     title : {
         type: String,
         required: [true, "Please provide a title for your blog"],
-        enum: ["Empowerment", "Celebration", "Gratitude"]
+        enum: ["Empowerment", "Celebration", "Gratitude", "Impossible Places", "Cell Fellowship"]
     },
     link : {
         type: String,
@@ -29,6 +29,10 @@ serviceSchema.pre("save", function(next){
         this.image = "/images/celebrate.jpg";
     }else if (this.title === "Gratitude") {
         this.image = "/images/gratitude.jpg";
+    }else if (this.title === "Impossible Places") {
+        this.image = "/images/impossible_places.jpg";
+    }else if (this.title === "Cell Fellowship") {
+        this.image = "/images/cell_fellowship.jpg";
     }
     next();
 });

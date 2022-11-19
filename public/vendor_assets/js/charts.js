@@ -3163,7 +3163,7 @@ function chartjsBarChartStacked(selector, label = "Bar chart stacked") {
 chartjsBarChartHorizontal("barChartHorizontal");
 chartjsBarChartVertical("barChartVertical");
 chartjsBarChartStacked("barChartstacked");
-chartJsBarChartThree("mychart8", "#5F63F220", "#5F63F2", "Order");
+chartJsBarChartThree("mychart8", "#5F63F220", "#5F63F2", "Blogs");
 chartJsBarChartThree("mychart9", "#FF69A520", "#FF69A5", "Revenue");
 chartJsBarChartThree("mychart10", "#20C99720", "#20C997", "Avg. Order");
 chartJsBarChartThree("mychart11", "#2C99FF20", "#2C99FF", "Visitors");

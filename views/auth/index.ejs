@@ -25,154 +25,17 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <div class="action-btn">
                                     <a href="" class="btn btn-sm btn-primary btn-add">
-                                        <i class="la la-plus"></i> Add Service Details</a>
-                                </div>
-                                <div class="action-btn">
-                                    <a href="" class="btn btn-sm btn-warning btn-add">
-                                        <i class="la la-plus"></i> Write New Blog</a>
+                                        <i class="la la-edit"></i> Write New Blog</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xxl-3 col-md-6 col-ssm-12 mb-30">
-                        <!-- Card 1 -->
-                        <div class="ap-po-details p-25 radius-xl bg-white d-flex justify-content-between">
-                            <div>
-                                <div class="overview-content">
-                                    <h1>7,461</h1>
-                                    <p>Orders</p>
-                                    <div class="ap-po-details-time">
-                                        <span class="color-success"><i class="las la-arrow-up"></i>
-                                            <strong>25%</strong></span>
-                                        <small>Since last week</small>
-                                    </div>
-                                </div>
+                    <%- include('./components/blogPublished.ejs') %>
+                    <%- include('./components/blogUnPublished.ejs') %>
+                    <%- include('./components/totalBlogs.ejs') %>
+                    <%- include('./components/totalServices.ejs') %>
 
-                            </div>
-                            <div class="ap-po-timeChart">
-                                <div class="overview-single__chart d-md-flex align-items-end">
-                                    <div class="parentContainer">
-
-
-                                        <div>
-                                            <canvas id="mychart8"></canvas>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 1 End -->
-                    </div>
-                    <div class="col-xxl-3 col-md-6 col-ssm-12 mb-30">
-                        <!-- Card 2 End  -->
-                        <div class="ap-po-details p-25 radius-xl bg-white d-flex justify-content-between">
-                            <div>
-
-
-
-
-
-                                <div class="overview-content">
-                                    <h1>$28,947</h1>
-                                    <p>Revenue</p>
-                                    <div class="ap-po-details-time">
-                                        <span class="color-success"><i class="las la-arrow-up"></i>
-                                            <strong>25%</strong></span>
-                                        <small>Since last week</small>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="ap-po-timeChart">
-                                <div class="overview-single__chart d-md-flex align-items-end">
-                                    <div class="parentContainer">
-
-
-                                        <div>
-                                            <canvas id="mychart9"></canvas>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 2 End  -->
-                    </div>
-                    <div class="col-xxl-3 col-md-6 col-ssm-12 mb-30">
-                        <!-- Card 3 -->
-                        <div class="ap-po-details p-25 radius-xl bg-white d-flex justify-content-between">
-                            <div>
-
-
-
-
-
-                                <div class="overview-content">
-                                    <h1>$3,241</h1>
-                                    <p>Avg. Order Value</p>
-                                    <div class="ap-po-details-time">
-                                        <span class="color-danger"><i class="las la-arrow-down"></i>
-                                            <strong>25%</strong></span>
-                                        <small>Since last week</small>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="ap-po-timeChart">
-                                <div class="overview-single__chart d-md-flex align-items-end">
-                                    <div class="parentContainer">
-
-
-                                        <div>
-                                            <canvas id="mychart10"></canvas>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 3 End -->
-                    </div>
-                    <div class="col-xxl-3 col-md-6 col-ssm-12 mb-30">
-                        <!-- Card 1 -->
-                        <div class="ap-po-details p-25 radius-xl bg-white d-flex justify-content-between">
-                            <div>
-
-
-
-
-
-                                <div class="overview-content">
-                                    <h1>45.32k</h1>
-                                    <p>Unique visitors</p>
-                                    <div class="ap-po-details-time">
-                                        <span class="color-success"><i class="las la-arrow-up"></i>
-                                            <strong>35%</strong></span>
-                                        <small>Since last week</small>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="ap-po-timeChart">
-                                <div class="overview-single__chart d-md-flex align-items-end">
-                                    <div class="parentContainer">
-
-
-                                        <div>
-                                            <canvas id="mychart11"></canvas>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 1 End -->
-                    </div>
+                    
                     <div class="col-xxl-6 mb-30">
 
                         <div class="card broder-0">
