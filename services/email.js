@@ -16,7 +16,7 @@ exports.sendEmail = async (options) => {
     });
   } else {
     transporter = nodemailer.createTransport({
-      service: process.env.MAIL_SERVICE,
+      // service: process.env.MAIL_SERVICE,
       host: process.env.MAIL_HOST,
       port: process.env.MAIL_PORT,
       secure: true,
