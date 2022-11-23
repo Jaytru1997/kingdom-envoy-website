@@ -29,10 +29,10 @@ const messageSchema = new mongoose.Schema({
     }
 });
 
-messageSchema.pre("save", function(next){
-    this.date = Date.now() - 1000;
-    next();
-});
+// messageSchema.pre("save", function(next){
+//     this.date = Date.now() - 1000;
+//     next();
+// });
 
 
 
