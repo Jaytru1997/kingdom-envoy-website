@@ -3,7 +3,7 @@ const toastButtons = document.querySelectorAll('.btn-toast');
   function createToast(type,icon,close){
     let toast = ``;
     
-    console.log(icon)
+    // console.log(icon)
     const notificationShocase = $('.notification-wrapper');
     if(type == "default"){
       toast = `
@@ -72,7 +72,7 @@ const toastButtons = document.querySelectorAll('.btn-toast');
     let duration = (optionValue, defaultValue) =>
       typeof optionValue === "undefined" ? defaultValue : optionValue;
 
-    dureation = this.dataset.toastduration;
+    duration = this.dataset.toastduration;
     
     let toastType = this.dataset.toasttype;
     let toastIcon = this.dataset.toasticon;
