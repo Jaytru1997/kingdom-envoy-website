@@ -87,12 +87,11 @@ const addTask = (e) => {
         alert("You haven't added a task yet.")
     }
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    // clearTasks();
     outputTasks();
 }
 
 
-//edit task
+//edit task status
 const toggleCheckTask = (e) => {
     e.preventDefault();
     const id = Number(e.target.dataset.todoId);
@@ -124,8 +123,7 @@ const deleteTask = (e) => {
         });
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }
-    clearTasks();
-    outputTasks();
+    location.reload();
 }
 
 
