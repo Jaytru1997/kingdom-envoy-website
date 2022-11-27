@@ -44,12 +44,17 @@ const initAnnouncement = () => {
     var instances = M.Modal.init(elems, options);
 }
 
+const initContactAccordion = () => {
+    var elems = document.querySelectorAll('.collapsible.expandable');
+    var instances = M.Collapsible.init(elems, {accordion: false});
+}
+
 const cycleFns = (fns) => {
   fns.forEach((fn) => {
     document.addEventListener("DOMContentLoaded", fn);
   });
 };
 
-const fns = [initSideBar, initCarousel, initFab, initAnnouncement];
+const fns = [initSideBar, initCarousel, initFab, initAnnouncement, initContactAccordion];
 
 cycleFns(fns);
