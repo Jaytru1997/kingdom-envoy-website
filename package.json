@@ -4,9 +4,12 @@
   "description": "Kingdom Envoy International Church Official Website",
   "main": "server.js",
   "scripts": {
-    "test": "/",
     "dev": "nodemon server.js",
-    "prod": "node server.js"
+    "start": "pm2 start server.js",
+    "restart": "pm2 stop server && pm2 restart server",
+    "stop": "pm2 stop server",
+    "kill": "pm2 kill",
+    "monitor": "pm2 monit"
   },
   "repository": {
     "type": "git",
@@ -49,6 +52,7 @@
     "node-cron": "^3.0.2",
     "nodemailer": "^6.7.8",
     "nodemon": "^3.0.2",
+    "pm2": "^5.4.2",
     "validator": "^13.7.0",
     "xss-clean": "^0.1.1"
   }

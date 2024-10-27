@@ -11,6 +11,7 @@ const helmet = require("helmet");
 const xss = require("xss-clean");
 const hpp = require("hpp");
 const router = require("./routes/routes");
+const { config } = require("./db/config");
 
 const app = express();
 
@@ -25,19 +26,31 @@ app.set("view engine", "ejs");
 app.use(helmet());
 
 // MIDDLEWARES
-if (
-  process.env.NODE_ENV === "development" ||
-  process.env.ENVIRONMENT === "local"
-) {
+if (process.env.NODE_ENV === "development" || config.ENVIRONMENT === "local") {
   app.use(morgan("dev"));
 }
 
-//limit requests from same ip
-const limiter = rateLimit({
-  max: 100,
-  windowMs: 60 * 60 * 1000,
-  message: "Too many requests from this IP, please try again in an hour!",
-});
+// CORS Configuration
+const allowedOrigins = [
+  "http://localhost:8080",
+  "http://127.0.0.1:5500",
+  "https://keynigeria.org.ng",
+  "https://www.keynigeria.org.ng",
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.set("trust proxy", "127.0.0.1");
 
 const expires = 1000 * 60 * 60 * 24;
 app.use(
@@ -67,14 +80,15 @@ app.use(xss());
 app.use(hpp()); //use white list to pass in duplicate query parameters
 
 app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type, Authorization"
   );
   res.setHeader("Access-Control-Allow-Credentials", false);
 
@@ -85,6 +99,10 @@ app.use(function (req, res, next) {
   res.set("Pragma", "no-cache");
   res.set("Expires", "0");
   res.set("Surrogate-Control", "no-store");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Authorization"
+  );
   next();
 });
 
